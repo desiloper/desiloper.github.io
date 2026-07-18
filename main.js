@@ -64,28 +64,6 @@ tagPills.forEach(pill => {
   });
 });
 
-// ── Newsletter Subscribe ────────────────────
-function handleSubscribe(e) {
-  e.preventDefault();
-  const input = document.getElementById('email-input');
-  const btn = e.target.querySelector('.btn-primary');
-
-  if (!input?.value) return;
-
-  btn.textContent = '구독 완료! 🎉';
-  btn.style.background = '#34c759';
-  input.value = '';
-  input.placeholder = '감사합니다!';
-  input.disabled = true;
-
-  setTimeout(() => {
-    btn.textContent = '구독하기';
-    btn.style.background = '';
-    input.placeholder = '이메일 주소를 입력하세요';
-    input.disabled = false;
-  }, 3000);
-}
-
 // ── Scroll-triggered Animations ────────────
 const observer = new IntersectionObserver(
   (entries) => {
