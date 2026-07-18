@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub Pages로 블로그 만들기 — Woni's Blog</title>
+  <meta name="description" content="순수 HTML과 CSS만으로 애플 감성의 블로그를 만드는 전체 과정을 단계별로 기록합니다." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="main-nav">
+    <a href="index.html" class="nav-brand">Woni's Blog</a>
+    <ul class="nav-links">
+      <li><a href="index.html#featured">추천글</a></li>
+      <li><a href="index.html#posts">전체글</a></li>
+      <li><a href="index.html#tags">태그</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="다크모드 전환" title="다크모드 전환">
+        🌙
+      </button>
+    </div>
+  </nav>
+
+  <!-- Back Button -->
+  <a href="index.html" class="back-btn">← 목록으로</a>
+
+  <!-- Article Hero -->
+  <header class="article-hero animate-in">
+    <span class="post-tag">개발</span>
+    <h1 class="article-title">GitHub Pages로 나만의<br/>블로그 만들기</h1>
+    <p class="article-subtitle">
+      복잡한 설정 없이, 순수 HTML과 CSS만으로 애플 감성의 블로그를 만드는 방법
+    </p>
+    <div class="article-meta">
+      <span>2026년 7월 18일</span>
+      <span class="post-meta-dot"></span>
+      <span>5분 읽기</span>
+      <span class="post-meta-dot"></span>
+      <span>#개발 #CSS #GitHub</span>
+    </div>
+  </header>
+
+  <!-- Cover Image -->
+  <div class="article-cover container animate-in animate-in-delay-1">
+    <div class="post-card-image-placeholder" style="aspect-ratio: 16/7; font-size: 100px; border-radius: 20px;">
+      🚀
+    </div>
+  </div>
+
+  <!-- Article Body -->
+  <article class="article-body animate-in animate-in-delay-2">
+
+    <p>
+      블로그를 만들겠다고 마음먹고 나서, Jekyll이니 Hugo니 Next.js니 여러 도구들을 찾아봤다. 그런데 결국 내가 선택한 건 <strong>그냥 HTML 파일</strong>이었다.
+    </p>
+
+    <p>
+      복잡한 빌드 시스템도, npm 패키지도 없이. 그냥 메모장(이라고 쓰고 VS Code라고 읽는)에서 파일 하나 만들고, GitHub에 올리면 끝. 이게 얼마나 심플한지 한번 보여줄게요.
+    </p>
+
+    <h2>왜 GitHub Pages인가?</h2>
+
+    <p>
+      GitHub Pages는 GitHub 저장소를 그대로 웹 호스팅으로 써주는 서비스예요. <strong>무료</strong>고, <strong>커스텀 도메인</strong>도 붙일 수 있고, <strong>HTTPS</strong>도 자동으로 적용돼요. 블로그 용도로는 정말 완벽한 선택입니다.
+    </p>
+
+    <blockquote>
+      "최고의 도구는 내가 실제로 쓰는 도구다." — 어느 개발자
+    </blockquote>
+
+    <h2>시작하기 전에 필요한 것</h2>
+
+    <p>딱 두 가지만 있으면 됩니다:</p>
+    <ul style="padding-left: 24px; margin-bottom: 24px; color: var(--text-secondary); line-height: 2;">
+      <li>GitHub 계정</li>
+      <li>텍스트 에디터 (VS Code 추천)</li>
+    </ul>
+
+    <h2>Step 1: 저장소 만들기</h2>
+
+    <p>
+      GitHub에서 새 저장소를 만들 때 이름을 <code>[내아이디].github.io</code> 형식으로 짓는 게 핵심이에요. 이 특별한 이름 덕분에 GitHub이 자동으로 Pages를 활성화해줍니다.
+    </p>
+
+    <pre><code># 예시
+저장소 이름: woni.github.io
+접근 URL: https://woni.github.io</code></pre>
+
+    <h2>Step 2: index.html 만들기</h2>
+
+    <p>
+      저장소를 클론한 뒤, <code>index.html</code> 파일을 하나 만들어요. 이 파일이 블로그의 메인 페이지가 됩니다.
+    </p>
+
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;내 블로그&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;안녕하세요!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <h2>Step 3: 배포하기</h2>
+
+    <p>
+      파일을 저장하고 GitHub에 push하면 끝이에요. 몇 분 안에 <code>https://[내아이디].github.io</code>에서 바로 확인할 수 있습니다.
+    </p>
+
+    <pre><code>git add .
+git commit -m "첫 번째 블로그 포스팅"
+git push origin main</code></pre>
+
+    <hr class="article-divider" />
+
+    <p>
+      이게 전부예요. 정말로. 복잡하게 생각할 필요 없이, 지금 당장 시작해보세요. 완벽한 블로그보다 <strong>지금 존재하는 블로그</strong>가 훨씬 낫습니다. 🎉
+    </p>
+
+  </article>
+
+  <!-- Related Posts -->
+  <section style="padding: 0 0 80px;">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">다음 읽을 글</h2>
+      </div>
+      <div class="posts-grid" style="grid-template-columns: repeat(2, 1fr);">
+        <a href="post.html" class="post-card">
+          <div class="post-card-image-placeholder">🎨</div>
+          <div class="post-card-body">
+            <span class="post-tag">디자인</span>
+            <h3 class="post-card-title">애플 디자인 언어에서 배운 것들</h3>
+            <p class="post-card-excerpt">단순함 뒤에 숨어있는 디테일. 애플 HIG를 공부하면서 느낀 좋은 디자인의 원칙들.</p>
+            <div class="post-card-footer">
+              <span class="post-card-date">2026. 7. 10</span>
+              <span class="read-more">읽기 →</span>
+            </div>
+          </div>
+        </a>
+        <a href="post.html" class="post-card">
+          <div class="post-card-image-placeholder">⚡</div>
+          <div class="post-card-body">
+            <span class="post-tag">개발</span>
+            <h3 class="post-card-title">CSS 애니메이션 제대로 쓰는 법</h3>
+            <p class="post-card-excerpt">성능을 고려한 CSS 애니메이션 최적화 팁. transform과 opacity만 써야 하는 진짜 이유.</p>
+            <div class="post-card-footer">
+              <span class="post-card-date">2026. 6. 20</span>
+              <span class="read-more">읽기 →</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-brand">Woni's Blog</span>
+      <span class="footer-text">© 2026 Woni. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="https://github.com/" target="_blank">GitHub</a>
+        <a href="#">About</a>
+        <a href="#">RSS</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
